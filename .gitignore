@@ -1,0 +1,76 @@
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+
+# Executables
+n_queens
+permutation
+power_set
+rip
+tsp
+ft_popen
+picoshell
+sandbox
+argo
+vbc
+
+# Bin directory
+bin/
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Temporary files
+*~
+*.swp
+*.swo
+*#
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# Test files
+test_*
+*_test
+
+# Coverage files
+*.gcov
+*.gcda
+*.gcno
+
+# Valgrind output
+vgcore.*
+
+# Core dumps
+core
+core.*
+
+# 42 specific
+*.tmp
+*.tmp.c 
