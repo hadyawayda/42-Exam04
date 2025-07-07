@@ -18,9 +18,6 @@ sandbox
 argo
 vbc
 
-# Bin directory
-bin/
-
 # Debug files
 *.dSYM/
 *.su
