@@ -30,7 +30,7 @@ typedef struct	pair {
 
 
 
-//Added
+// Forward declare those functions here so they can be used in the function definitions below
 int		argo(json *dst, FILE *stream);
 int		parser(json *dst, FILE *stream);
 int		parse_int(json *dst, FILE *stream);
@@ -128,7 +128,7 @@ void	serialize(json j)
 
 
 
-
+// Study from here the forward declared functions from the top of the file
 int parser(json *dst, FILE *stream)
 {
 	int	c;
