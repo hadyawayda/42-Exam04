@@ -14,6 +14,7 @@ typedef struct node {
     struct node *r;
 }   node;
 
+// forward declare the functions here
 node *parse_expr(char **s);
 node *parse_factor(char **s);
 node *parse_term(char **s);
@@ -66,7 +67,8 @@ int expect(char **s, char c)
     return (0);
 }
 
-
+// forward declare the functions above, implement them below
+// study from here
 int eval_tree(node *tree)
 {
     switch (tree->type)
