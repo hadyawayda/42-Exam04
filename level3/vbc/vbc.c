@@ -67,8 +67,6 @@ int expect(char **s, char c)
     return (0);
 }
 
-// forward declare the functions above, implement them below
-// study from here
 int eval_tree(node *tree)
 {
     switch (tree->type)
@@ -83,26 +81,8 @@ int eval_tree(node *tree)
     return (0);
 }
 
-node *parse_expr(char **s) {
-    node *left = parse_term(s);
-    if (!left)
-        return (NULL);
-    while (accept(s, '+')) {
-        node *right = parse_term(s);
-        if (!right) {
-            destroy_tree(left);
-            return (NULL);
-        }
-        node n = {ADD, 0, left, right};
-        left = new_node(n);
-        if (!left) {
-            destroy_tree(right);
-            return (NULL);
-        }
-    }
-    return (left);
-}
-
+// forward declare the functions above, implement them below
+// study from here
 node *parse_factor(char **s) {
     if (isdigit(**s)) {
         node n = {VAL, **s - '0', NULL, NULL};
@@ -132,6 +112,26 @@ node *parse_term(char **s) {
             return (NULL);
         }
         node n = {MULTI, 0, left, right};
+        left = new_node(n);
+        if (!left) {
+            destroy_tree(right);
+            return (NULL);
+        }
+    }
+    return (left);
+}
+
+node *parse_expr(char **s) {
+    node *left = parse_term(s);
+    if (!left)
+        return (NULL);
+    while (accept(s, '+')) {
+        node *right = parse_term(s);
+        if (!right) {
+            destroy_tree(left);
+            return (NULL);
+        }
+        node n = {ADD, 0, left, right};
         left = new_node(n);
         if (!left) {
             destroy_tree(right);
